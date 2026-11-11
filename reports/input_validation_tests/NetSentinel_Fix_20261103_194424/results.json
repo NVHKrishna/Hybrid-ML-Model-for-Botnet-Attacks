@@ -1,0 +1,350 @@
+{
+  "checks": [
+    {
+      "name": "builder ANN valid 42-feature inference",
+      "status": "PASS",
+      "detail": "{'shape': (3, 1), 'range': [0.5, 0.5]}"
+    },
+    {
+      "name": "builder ANN rejects 41 features",
+      "status": "PASS",
+      "detail": "ValueError: Invalid input shape for ANN: expected (batch, 42), received (2, 41)."
+    },
+    {
+      "name": "builder ANN rejects 43 features",
+      "status": "PASS",
+      "detail": "ValueError: Invalid input shape for ANN: expected (batch, 42), received (2, 43)."
+    },
+    {
+      "name": "builder ANN rejects rank 1",
+      "status": "PASS",
+      "detail": "ValueError: Invalid input shape for ANN: expected (batch, 42), received (42,)."
+    },
+    {
+      "name": "builder ANN rejects wrong rank/channel",
+      "status": "PASS",
+      "detail": "ValueError: Invalid input shape for ANN: expected (batch, 42), received (2, 42, 1)."
+    },
+    {
+      "name": "builder CNN valid 42-feature inference",
+      "status": "PASS",
+      "detail": "{'shape': (3, 1), 'range': [0.5, 0.5]}"
+    },
+    {
+      "name": "builder CNN rejects 41 features",
+      "status": "PASS",
+      "detail": "ValueError: Invalid input shape for CNN: expected (batch, 42, 1), received (2, 41, 1)."
+    },
+    {
+      "name": "builder CNN rejects 43 features",
+      "status": "PASS",
+      "detail": "ValueError: Invalid input shape for CNN: expected (batch, 42, 1), received (2, 43, 1)."
+    },
+    {
+      "name": "builder CNN rejects rank 1",
+      "status": "PASS",
+      "detail": "ValueError: Invalid input shape for CNN: expected (batch, 42, 1), received (42,)."
+    },
+    {
+      "name": "builder CNN rejects wrong rank/channel",
+      "status": "PASS",
+      "detail": "ValueError: Invalid input shape for CNN: expected (batch, 42, 1), received (2, 42, 2)."
+    },
+    {
+      "name": "builder LSTM valid 42-feature inference",
+      "status": "PASS",
+      "detail": "{'shape': (3, 1), 'range': [0.5, 0.5]}"
+    },
+    {
+      "name": "builder LSTM rejects 41 features",
+      "status": "PASS",
+      "detail": "ValueError: Invalid input shape for LSTM: expected (batch, 42, 1), received (2, 41, 1)."
+    },
+    {
+      "name": "builder LSTM rejects 43 features",
+      "status": "PASS",
+      "detail": "ValueError: Invalid input shape for LSTM: expected (batch, 42, 1), received (2, 43, 1)."
+    },
+    {
+      "name": "builder LSTM rejects rank 1",
+      "status": "PASS",
+      "detail": "ValueError: Invalid input shape for LSTM: expected (batch, 42, 1), received (42,)."
+    },
+    {
+      "name": "builder LSTM rejects wrong rank/channel",
+      "status": "PASS",
+      "detail": "ValueError: Invalid input shape for LSTM: expected (batch, 42, 1), received (2, 42, 2)."
+    },
+    {
+      "name": "builder RNN valid 42-feature inference",
+      "status": "PASS",
+      "detail": "{'shape': (3, 1), 'range': [0.5, 0.5]}"
+    },
+    {
+      "name": "builder RNN rejects 41 features",
+      "status": "PASS",
+      "detail": "ValueError: Invalid input shape for RNN: expected (batch, 42, 1), received (2, 41, 1)."
+    },
+    {
+      "name": "builder RNN rejects 43 features",
+      "status": "PASS",
+      "detail": "ValueError: Invalid input shape for RNN: expected (batch, 42, 1), received (2, 43, 1)."
+    },
+    {
+      "name": "builder RNN rejects rank 1",
+      "status": "PASS",
+      "detail": "ValueError: Invalid input shape for RNN: expected (batch, 42, 1), received (42,)."
+    },
+    {
+      "name": "builder RNN rejects wrong rank/channel",
+      "status": "PASS",
+      "detail": "ValueError: Invalid input shape for RNN: expected (batch, 42, 1), received (2, 42, 2)."
+    },
+    {
+      "name": "checkpoint ANN valid 42-feature inference",
+      "status": "PASS",
+      "detail": "{'shape': (3,), 'range': [0.43902304768562317, 0.43902304768562317]}"
+    },
+    {
+      "name": "checkpoint ANN direct rejects 41 features",
+      "status": "PASS",
+      "detail": "ValueError: Invalid input shape for ANN: expected (batch, 42), received (2, 41)."
+    },
+    {
+      "name": "checkpoint ANN direct rejects 43 features",
+      "status": "PASS",
+      "detail": "ValueError: Invalid input shape for ANN: expected (batch, 42), received (2, 43)."
+    },
+    {
+      "name": "checkpoint ANN direct rejects rank 1",
+      "status": "PASS",
+      "detail": "ValueError: Invalid input shape for ANN: expected (batch, 42), received (42,)."
+    },
+    {
+      "name": "checkpoint ANN direct rejects wrong rank/channel",
+      "status": "PASS",
+      "detail": "ValueError: Invalid input shape for ANN: expected (batch, 42), received (2, 42, 1)."
+    },
+    {
+      "name": "checkpoint CNN valid 42-feature inference",
+      "status": "PASS",
+      "detail": "{'shape': (3,), 'range': [0.5957809090614319, 0.5957809090614319]}"
+    },
+    {
+      "name": "checkpoint CNN direct rejects 41 features",
+      "status": "PASS",
+      "detail": "ValueError: Invalid input shape for CNN: expected (batch, 42, 1), received (2, 41, 1)."
+    },
+    {
+      "name": "checkpoint CNN direct rejects 43 features",
+      "status": "PASS",
+      "detail": "ValueError: Invalid input shape for CNN: expected (batch, 42, 1), received (2, 43, 1)."
+    },
+    {
+      "name": "checkpoint CNN direct rejects rank 1",
+      "status": "PASS",
+      "detail": "ValueError: Invalid input shape for CNN: expected (batch, 42, 1), received (42,)."
+    },
+    {
+      "name": "checkpoint CNN direct rejects wrong rank/channel",
+      "status": "PASS",
+      "detail": "ValueError: Invalid input shape for CNN: expected (batch, 42, 1), received (2, 42, 2)."
+    },
+    {
+      "name": "checkpoint LSTM valid 42-feature inference",
+      "status": "PASS",
+      "detail": "{'shape': (3,), 'range': [0.2962476909160614, 0.2962476909160614]}"
+    },
+    {
+      "name": "checkpoint LSTM direct rejects 41 features",
+      "status": "PASS",
+      "detail": "ValueError: Invalid input shape for LSTM: expected (batch, 42, 1), received (2, 41, 1)."
+    },
+    {
+      "name": "checkpoint LSTM direct rejects 43 features",
+      "status": "PASS",
+      "detail": "ValueError: Invalid input shape for LSTM: expected (batch, 42, 1), received (2, 43, 1)."
+    },
+    {
+      "name": "checkpoint LSTM direct rejects rank 1",
+      "status": "PASS",
+      "detail": "ValueError: Invalid input shape for LSTM: expected (batch, 42, 1), received (42,)."
+    },
+    {
+      "name": "checkpoint LSTM direct rejects wrong rank/channel",
+      "status": "PASS",
+      "detail": "ValueError: Invalid input shape for LSTM: expected (batch, 42, 1), received (2, 42, 2)."
+    },
+    {
+      "name": "checkpoint RNN valid 42-feature inference",
+      "status": "PASS",
+      "detail": "{'shape': (3,), 'range': [0.5369452238082886, 0.5369452238082886]}"
+    },
+    {
+      "name": "checkpoint RNN direct rejects 41 features",
+      "status": "PASS",
+      "detail": "ValueError: Invalid input shape for RNN: expected (batch, 42, 1), received (2, 41, 1)."
+    },
+    {
+      "name": "checkpoint RNN direct rejects 43 features",
+      "status": "PASS",
+      "detail": "ValueError: Invalid input shape for RNN: expected (batch, 42, 1), received (2, 43, 1)."
+    },
+    {
+      "name": "checkpoint RNN direct rejects rank 1",
+      "status": "PASS",
+      "detail": "ValueError: Invalid input shape for RNN: expected (batch, 42, 1), received (42,)."
+    },
+    {
+      "name": "checkpoint RNN direct rejects wrong rank/channel",
+      "status": "PASS",
+      "detail": "ValueError: Invalid input shape for RNN: expected (batch, 42, 1), received (2, 42, 2)."
+    },
+    {
+      "name": "ACLR valid four-base-probability input",
+      "status": "PASS",
+      "detail": "{'shape': (3, 1), 'range': [0.00019446219084784389, 0.00019446219084784389]}"
+    },
+    {
+      "name": "ACLR rejects 41 columns",
+      "status": "PASS",
+      "detail": "InvalidArgumentError: input rejected"
+    },
+    {
+      "name": "ACLR rejects 5 columns",
+      "status": "PASS",
+      "detail": "InvalidArgumentError: input rejected"
+    },
+    {
+      "name": "ACLR rejects rank 1",
+      "status": "PASS",
+      "detail": "ValueError: input rejected"
+    },
+    {
+      "name": "ACLR rejects wrong rank",
+      "status": "PASS",
+      "detail": "ValueError: input rejected"
+    },
+    {
+      "name": "predict_proba ANN rejects 41 features",
+      "status": "PASS",
+      "detail": "ValueError: Invalid input shape for ANN: expected (batch, 42), received (2, 41)."
+    },
+    {
+      "name": "predict_proba ANN rejects 43 features",
+      "status": "PASS",
+      "detail": "ValueError: Invalid input shape for ANN: expected (batch, 42), received (2, 43)."
+    },
+    {
+      "name": "predict_proba ANN rejects rank 1",
+      "status": "PASS",
+      "detail": "ValueError: Invalid input shape for ANN: expected (batch, 42), received (42,)."
+    },
+    {
+      "name": "predict_proba ANN rejects rank 3 input matrix",
+      "status": "PASS",
+      "detail": "ValueError: Invalid input shape for ANN: expected (batch, 42), received (2, 42, 1)."
+    },
+    {
+      "name": "predict_proba CNN rejects 41 features",
+      "status": "PASS",
+      "detail": "ValueError: Invalid input shape for CNN: expected (batch, 42, 1), received (2, 41, 1)."
+    },
+    {
+      "name": "predict_proba CNN rejects 43 features",
+      "status": "PASS",
+      "detail": "ValueError: Invalid input shape for CNN: expected (batch, 42, 1), received (2, 43, 1)."
+    },
+    {
+      "name": "predict_proba CNN rejects rank 1",
+      "status": "PASS",
+      "detail": "ValueError: Invalid input shape for CNN: expected (batch, 42, 1), received (42, 1)."
+    },
+    {
+      "name": "predict_proba CNN rejects rank 3 input matrix",
+      "status": "PASS",
+      "detail": "ValueError: Invalid input shape for CNN: expected (batch, 42, 1), received (2, 42, 1, 1)."
+    },
+    {
+      "name": "predict_proba LSTM rejects 41 features",
+      "status": "PASS",
+      "detail": "ValueError: Invalid input shape for LSTM: expected (batch, 42, 1), received (2, 41, 1)."
+    },
+    {
+      "name": "predict_proba LSTM rejects 43 features",
+      "status": "PASS",
+      "detail": "ValueError: Invalid input shape for LSTM: expected (batch, 42, 1), received (2, 43, 1)."
+    },
+    {
+      "name": "predict_proba LSTM rejects rank 1",
+      "status": "PASS",
+      "detail": "ValueError: Invalid input shape for LSTM: expected (batch, 42, 1), received (42, 1)."
+    },
+    {
+      "name": "predict_proba LSTM rejects rank 3 input matrix",
+      "status": "PASS",
+      "detail": "ValueError: Invalid input shape for LSTM: expected (batch, 42, 1), received (2, 42, 1, 1)."
+    },
+    {
+      "name": "predict_proba RNN rejects 41 features",
+      "status": "PASS",
+      "detail": "ValueError: Invalid input shape for RNN: expected (batch, 42, 1), received (2, 41, 1)."
+    },
+    {
+      "name": "predict_proba RNN rejects 43 features",
+      "status": "PASS",
+      "detail": "ValueError: Invalid input shape for RNN: expected (batch, 42, 1), received (2, 43, 1)."
+    },
+    {
+      "name": "predict_proba RNN rejects rank 1",
+      "status": "PASS",
+      "detail": "ValueError: Invalid input shape for RNN: expected (batch, 42, 1), received (42, 1)."
+    },
+    {
+      "name": "predict_proba RNN rejects rank 3 input matrix",
+      "status": "PASS",
+      "detail": "ValueError: Invalid input shape for RNN: expected (batch, 42, 1), received (2, 42, 1, 1)."
+    },
+    {
+      "name": "end-to-end ANN predictions unchanged",
+      "status": "PASS",
+      "detail": "{'max_abs_diff': 0.0}"
+    },
+    {
+      "name": "end-to-end CNN predictions unchanged",
+      "status": "PASS",
+      "detail": "{'max_abs_diff': 0.0}"
+    },
+    {
+      "name": "end-to-end LSTM predictions unchanged",
+      "status": "PASS",
+      "detail": "{'max_abs_diff': 0.0}"
+    },
+    {
+      "name": "end-to-end RNN predictions unchanged",
+      "status": "PASS",
+      "detail": "{'max_abs_diff': 2.205371856689453e-06}"
+    },
+    {
+      "name": "end-to-end preprocessing \u2192 four base models \u2192 ACLR unchanged",
+      "status": "PASS",
+      "detail": "{'stack_input_shape': (24700, 4), 'output_shape': (24700,), 'max_abs_diff': 3.5762786865234375e-07}"
+    },
+    {
+      "name": "Saved checkpoints remain byte-for-byte unchanged",
+      "status": "PASS",
+      "detail": "{'before_equals_after': True}"
+    }
+  ],
+  "counts": {
+    "PASS": 67,
+    "FAIL": 0
+  },
+  "checkpoint_sha256": {
+    "ANN": "d18cfc020f64d33fd9da6dd0859335779e1a2e3c8ed064901fea58cff85b4320",
+    "CNN": "09acdec19b751f06797140074900b608045dc4e129e31ae58e2aea92afff7bff",
+    "LSTM": "ddba83d4bf2ed422db98d35e1786ec228d2a3986a7477254a7eeed280f5639cb",
+    "RNN": "f96fda14d4900595f664aa15d0904adfb8deb0771506f11cdd918907ded309fd",
+    "ACLR": "f48155052491cb6e3e70272021adeff0c3610f0c869f87bbeed84013cba70d9b"
+  }
+}

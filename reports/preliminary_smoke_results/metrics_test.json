@@ -1,0 +1,42 @@
+{
+  "ANN": {
+    "accuracy": 0.856,
+    "precision": 0.878182,
+    "recall": 0.8625,
+    "f1": 0.87027,
+    "roc_auc": 0.949748,
+    "pr_auc": 0.964365
+  },
+  "CNN": {
+    "accuracy": 0.837,
+    "precision": 0.800303,
+    "recall": 0.944643,
+    "f1": 0.866503,
+    "roc_auc": 0.930946,
+    "pr_auc": 0.947265
+  },
+  "LSTM": {
+    "accuracy": 0.747,
+    "precision": 0.913747,
+    "recall": 0.605357,
+    "f1": 0.728249,
+    "roc_auc": 0.860515,
+    "pr_auc": 0.893467
+  },
+  "RNN": {
+    "accuracy": 0.846,
+    "precision": 0.846416,
+    "recall": 0.885714,
+    "f1": 0.86562,
+    "roc_auc": 0.939233,
+    "pr_auc": 0.954842
+  },
+  "ACLR": {
+    "accuracy": 0.858,
+    "precision": 0.847176,
+    "recall": 0.910714,
+    "f1": 0.877797,
+    "roc_auc": 0.947492,
+    "pr_auc": 0.963235
+  }
+}

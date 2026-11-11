@@ -1,0 +1,28 @@
+{
+  "mode": "paper",
+  "run_dir": "D:\\Study\\Projects\\NetSentinel\\runs\\NetSentinel_20261103_113830",
+  "seed": 42,
+  "device": "No GPU detected \u2014 running on CPU",
+  "dataset_file": "D:\\Study\\Projects\\NetSentinel\\dataset\\UNSW_NB15_training-set.csv",
+  "partition_sizes": {
+    "train": 48987,
+    "validation": 8645,
+    "test": 24700
+  },
+  "model_epochs_configured": {
+    "ANN": 25,
+    "CNN": 30,
+    "LSTM": 30,
+    "RNN": 15
+  },
+  "aclr_epochs_configured": 25,
+  "oof_folds": 5,
+  "epochs_completed": {
+    "ANN": 25,
+    "CNN": 30,
+    "LSTM": 30,
+    "RNN": 15,
+    "ACLR": 25
+  },
+  "status": "completed"
+}

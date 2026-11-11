@@ -1,0 +1,74 @@
+# =============================================================================
+# NetSentinel Configuration — Exact Base Paper Reproduction
+# IEEE Access 2024: "Hybrid Machine Learning Model for Efficient Botnet Attack
+# Detection in IoT Environment" (Mudasir Ali et al.)
+# =============================================================================
+
+# ── Dataset ──────────────────────────────────────────────────────────────────
+data:
+  # The base paper uses the UNSW-NB15 dataset file containing 82,332 records
+  # (UNSW_NB15_training-set.csv) as its main dataset, split into 70% train and 30% test.
+  dataset_file: dataset/UNSW_NB15_training-set.csv   # Exactly 82,332 records
+  full_train_file: dataset/UNSW_NB15_testing-set.csv # 175,341 records (available for extended experiments)
+  target_col: label
+  drop_cols: [label, attack_cat, id]
+  categorical_cols: [proto, service, state]
+  test_split: 0.30          # 70% outer train / 30% outer test split as in Section III-A / Figure 1
+  val_split: 0.15           # 15% of outer train (8,645 samples) reserved for validation & model checkpointing
+  random_seed: 42
+
+# ── Preprocessing ─────────────────────────────────────────────────────────────
+preprocessing:
+  encoder: label            # LabelEncoder as explicitly specified in Section III-B
+  scaler: standard          # StandardScaler for numerical normalization
+
+# ── Base Paper Hyperparameters (from Tables 2, 3, 4, 5, 7) ────────────────────
+training:
+  batch_size: 32            # Table 2, 3, 4, 5: batch_size = 32
+  optimizer: adam           # adam optimizer across all models
+  learning_rate: 0.001
+  loss: binary_crossentropy # binary_crossentropy across all models
+  random_seed: 42
+
+# ── Individual model architectures (Tables 2, 3, 4, 5, 7, Figures 3, 4, 5, 6) ─
+models:
+  ann:
+    # Table 2 & Table 7: 3 layers: Dense(64, relu) -> Dense(32, relu) -> Dense(1, sigmoid)
+    layers: [64, 32, 1]
+    activation: relu
+    output_activation: sigmoid
+    epochs: 25              # Table 7: 25 epochs -> Acc 0.7568
+
+  cnn:
+    # Table 3 & Figure 4: Conv1D(64, k=3) -> MaxPool(2) -> Conv1D(32, k=3) -> MaxPool(2) -> Flatten -> Dense(1, sigmoid)
+    filters: [64, 32]
+    kernel_size: 3
+    pool_size: 2
+    epochs: 30              # Table 7 & Table 9: 30 epochs -> Acc 0.9440
+
+  lstm:
+    # Table 4 & Table 7 & Figure 5: LSTM(64) -> Dense(1, sigmoid)
+    units: 64
+    dense_units: 32         # Table 4 mentions Dense(32)
+    epochs: 30              # Table 7 & Table 10: 30 epochs -> Acc 0.9651
+
+  rnn:
+    # Table 5 & Table 7 & Figure 6: SimpleRNN(64) -> Dense(1, sigmoid)
+    units: 64
+    epochs: 15              # Table 11 & Table 21: 15 epochs -> best Acc 0.9522 (Table 7 tests 10 epochs)
+
+# ── ACLR Stacking Architecture (Figure 1, Figure 7, Table 7, Table 21) ────────
+stacking:
+  # Meta-classifier: Concatenate P1, P2, P3, P4 (4 inputs) -> Dense(64, relu) -> Dense(32, relu) -> Dense(1, sigmoid)
+  meta_layers: [64, 32, 1]
+  epochs: 25                # Table 7 & Table 12: 25 epochs -> Acc 0.9698
+  batch_size: 32
+  k_folds: [3, 5, 7, 10]    # Table 14-17: k-fold CV evaluated for k=3, 5, 7, 10
+  default_k: 5              # k=5 gave highest CV accuracy: 0.9749
+
+# ── Output paths ──────────────────────────────────────────────────────────────
+paths:
+  models_dir: models
+  outputs_dir: outputs
+  plots_dir: outputs/plots
+  reports_dir: reports

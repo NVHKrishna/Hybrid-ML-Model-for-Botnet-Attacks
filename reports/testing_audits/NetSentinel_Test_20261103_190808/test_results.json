@@ -1,0 +1,404 @@
+{
+  "audit_dir": "D:\\Study\\Projects\\NetSentinel\\reports\\testing_audits\\NetSentinel_Test_20261103_190808",
+  "run_dir": "D:\\Study\\Projects\\NetSentinel\\runs\\NetSentinel_20261103_113830",
+  "checks": [
+    {
+      "test": "Python/runtime versions",
+      "status": "PASS",
+      "detail": "{'python': '3.13.7', 'tensorflow': '2.21.0', 'numpy': '2.5.1', 'pandas': '3.0.3', 'sklearn': '1.9.1'}"
+    },
+    {
+      "test": "Required package versions",
+      "status": "PASS",
+      "detail": "{'tensorflow': '2.21.0', 'scikit-learn': '1.9.1', 'numpy': '2.5.1', 'pandas': '3.0.3', 'matplotlib': '3.11.2', 'seaborn': '0.13.2', 'joblib': '1.6.0', 'scipy': '1.18.1', 'PyYAML': '6.0.3'}"
+    },
+    {
+      "test": "Configured dataset/checkpoint/preprocessor paths",
+      "status": "PASS",
+      "detail": "{'dataset': 'dataset/UNSW_NB15_training-set.csv', 'dataset_exists': True, 'checkpoints': {'ann': True, 'cnn': True, 'lstm': True, 'rnn': True, 'aclr': True}, 'preprocessor_exists': True, 'old_legacy_checkpoints_present': {'ann_final.keras': True, 'cnn_final.keras': True, 'lstm_final.keras': True, 'rnn_final.keras': True}}"
+    },
+    {
+      "test": "Dataset dimensions/distribution/quality",
+      "status": "PASS",
+      "detail": "{'rows': 82332, 'columns': 45, 'features': 42, 'labels': {'0': 37000, '1': 45332}, 'missing_cells': 0, 'duplicate_rows': 0, 'numeric_infinite_values': 0, 'feature_columns_include_target': False}"
+    },
+    {
+      "test": "Partitioning and train-only preprocessing fit",
+      "status": "PASS",
+      "detail": "{'sizes': {'y_train': 48987, 'y_val': 8645, 'y_test': 24700}, 'pairwise_disjoint': True, 'scaler_n_samples_seen': 48987, 'train_rows': 48987, 'features': ['dur', 'proto', 'service', 'state', 'spkts', 'dpkts', 'sbytes', 'dbytes', 'rate', 'sttl', 'dttl', 'sload', 'dload', 'sloss', 'dloss', 'sinpkt', 'dinpkt', 'sjit', 'djit', 'swin', 'stcpb', 'dtcpb', 'dwin', 'tcprtt', 'synack', 'ackdat', 'smean', 'dmean', 'trans_depth', 'response_body_len', 'ct_srv_src', 'ct_state_ttl', 'ct_dst_ltm', 'ct_src_dport_ltm', 'ct_dst_sport_ltm', 'ct_dst_src_ltm', 'is_ftp_login', 'ct_ftp_cmd', 'ct_flw_http_mthd', 'ct_src_ltm', 'ct_srv_dst', 'is_sm_ips_ports'], 'no_target_columns': True}"
+    },
+    {
+      "test": "Saved preprocessor matches recomputed training fit",
+      "status": "PASS",
+      "detail": "{'saved_features_match': True, 'saved_scaler_samples': 48987}"
+    },
+    {
+      "test": "Categorical unknown and feature-order behavior",
+      "status": "PASS",
+      "detail": "{'reordered_features_identical': True, 'unknown_category_finite': True}"
+    },
+    {
+      "test": "Saved labels align with deterministic held-out split",
+      "status": "PASS",
+      "detail": "{'shape': (24700,), 'equal_to_recomputed_test_y': True}"
+    },
+    {
+      "test": "ANN checkpoint load and input/output architecture",
+      "status": "PASS",
+      "detail": "{'input_shape': (None, 42), 'output_shape': (None, 1), 'file_bytes': 84686}"
+    },
+    {
+      "test": "CNN checkpoint load and input/output architecture",
+      "status": "PASS",
+      "detail": "{'input_shape': (None, 42, 1), 'output_shape': (None, 1), 'file_bytes': 114306}"
+    },
+    {
+      "test": "LSTM checkpoint load and input/output architecture",
+      "status": "PASS",
+      "detail": "{'input_shape': (None, 42, 1), 'output_shape': (None, 1), 'file_bytes': 258016}"
+    },
+    {
+      "test": "RNN checkpoint load and input/output architecture",
+      "status": "PASS",
+      "detail": "{'input_shape': (None, 42, 1), 'output_shape': (None, 1), 'file_bytes': 76374}"
+    },
+    {
+      "test": "ACLR checkpoint load and input/output architecture",
+      "status": "PASS",
+      "detail": "{'input_shape': (None, 4), 'output_shape': (None, 1), 'file_bytes': 55508}"
+    },
+    {
+      "test": "ANN validation/test inference outputs",
+      "status": "PASS",
+      "detail": "{'val_shape': (8645,), 'test_shape': (24700,), 'finite': True, 'probability_range': [1.4401469236176878e-17, 1.0], 'saved_array_max_abs_diff': 0.0}"
+    },
+    {
+      "test": "ANN repeated inference consistency",
+      "status": "PASS",
+      "detail": "{'max_abs_diff': 0.0}"
+    },
+    {
+      "test": "ANN single and multiple row inference",
+      "status": "PASS",
+      "detail": "{'single': [0.17047283053398132], 'batch_shape': (8,)}"
+    },
+    {
+      "test": "CNN validation/test inference outputs",
+      "status": "PASS",
+      "detail": "{'val_shape': (8645,), 'test_shape': (24700,), 'finite': True, 'probability_range': [2.33984974272591e-14, 1.0], 'saved_array_max_abs_diff': 0.0}"
+    },
+    {
+      "test": "CNN repeated inference consistency",
+      "status": "PASS",
+      "detail": "{'max_abs_diff': 0.0}"
+    },
+    {
+      "test": "CNN single and multiple row inference",
+      "status": "PASS",
+      "detail": "{'single': [0.11889863759279251], 'batch_shape': (8,)}"
+    },
+    {
+      "test": "LSTM validation/test inference outputs",
+      "status": "PASS",
+      "detail": "{'val_shape': (8645,), 'test_shape': (24700,), 'finite': True, 'probability_range': [1.1951754252947921e-08, 1.0], 'saved_array_max_abs_diff': 0.0}"
+    },
+    {
+      "test": "LSTM repeated inference consistency",
+      "status": "PASS",
+      "detail": "{'max_abs_diff': 0.0}"
+    },
+    {
+      "test": "LSTM single and multiple row inference",
+      "status": "PASS",
+      "detail": "{'single': [0.4119984805583954], 'batch_shape': (8,)}"
+    },
+    {
+      "test": "RNN validation/test inference outputs",
+      "status": "PASS",
+      "detail": "{'val_shape': (8645,), 'test_shape': (24700,), 'finite': True, 'probability_range': [7.266021384566557e-06, 0.9999974966049194], 'saved_array_max_abs_diff': 0.0}"
+    },
+    {
+      "test": "RNN repeated inference consistency",
+      "status": "PASS",
+      "detail": "{'max_abs_diff': 0.0}"
+    },
+    {
+      "test": "RNN single and multiple row inference",
+      "status": "PASS",
+      "detail": "{'single': [0.1634320765733719], 'batch_shape': (8,)}"
+    },
+    {
+      "test": "ACLR four-feature complete stack validation/test inference",
+      "status": "PASS",
+      "detail": "{'meta_input_shape': (None, 4), 'base_test_shape': (24700, 4), 'val_output_shape': (8645,), 'test_output_shape': (24700,), 'saved_array_max_abs_diff': 0.0}"
+    },
+    {
+      "test": "ACLR single/multiple inference",
+      "status": "PASS",
+      "detail": "{'single_shape': (1, 1), 'batch_shape': (8, 1)}"
+    },
+    {
+      "test": "ANN invalid feature dimension rejection",
+      "status": "PASS",
+      "detail": "invalid input was rejected"
+    },
+    {
+      "test": "CNN invalid feature dimension rejection",
+      "status": "FAIL",
+      "detail": "invalid input unexpectedly accepted"
+    },
+    {
+      "test": "LSTM invalid feature dimension rejection",
+      "status": "FAIL",
+      "detail": "invalid input unexpectedly accepted"
+    },
+    {
+      "test": "RNN invalid feature dimension rejection",
+      "status": "FAIL",
+      "detail": "invalid input unexpectedly accepted"
+    },
+    {
+      "test": "Input validation: missing feature column",
+      "status": "PASS",
+      "detail": "ValueError: Input is missing fitted feature columns: ['dur']"
+    },
+    {
+      "test": "Input validation: missing numeric value",
+      "status": "PASS",
+      "detail": "ValueError: Preprocessed data contains NaN or Inf values."
+    },
+    {
+      "test": "Input validation: unexpected string numeric type",
+      "status": "PASS",
+      "detail": "ValueError: could not convert string to float: 'not_numeric'"
+    },
+    {
+      "test": "Missing checkpoint failure handling",
+      "status": "PASS",
+      "detail": "ValueError: missing checkpoint rejected"
+    },
+    {
+      "test": "ANN independent saved test metric reconciliation",
+      "status": "PASS",
+      "detail": "{'max_abs_diff': 4.117647057766405e-07, 'confusion_matrix': [[10532, 568], [479, 13121]]}"
+    },
+    {
+      "test": "CNN independent saved test metric reconciliation",
+      "status": "PASS",
+      "detail": "{'max_abs_diff': 4.179254783354125e-07, 'confusion_matrix': [[10414, 686], [384, 13216]]}"
+    },
+    {
+      "test": "LSTM independent saved test metric reconciliation",
+      "status": "PASS",
+      "detail": "{'max_abs_diff': 4.4651872410650384e-07, 'confusion_matrix': [[10591, 509], [510, 13090]]}"
+    },
+    {
+      "test": "RNN independent saved test metric reconciliation",
+      "status": "PASS",
+      "detail": "{'max_abs_diff': 4.950980392326443e-07, 'confusion_matrix': [[10532, 568], [607, 12993]]}"
+    },
+    {
+      "test": "ACLR independent saved test metric reconciliation",
+      "status": "PASS",
+      "detail": "{'max_abs_diff': 4.4244968877560353e-07, 'confusion_matrix': [[10484, 616], [402, 13198]]}"
+    },
+    {
+      "test": "Saved training log OOF fold evidence",
+      "status": "PASS",
+      "detail": "{'fold_marker_count': 6, 'execution_complete_marker': True, 'metadata_oof_folds': 5, 'external_full_data_kfold': False}"
+    },
+    {
+      "test": "Existing tests/test_pipeline.py execution",
+      "status": "NOT TESTED",
+      "detail": "Not run: the script fits base models and ACLR, writes under models/, and deletes files; explicit no-retraining constraint takes precedence."
+    }
+  ],
+  "metric_rows": [
+    {
+      "model": "ANN",
+      "recomputed": {
+        "accuracy": 0.9576113360323887,
+        "precision": 0.9585068303017021,
+        "recall": 0.9647794117647058,
+        "f1": 0.9616328923742167,
+        "roc_auc": 0.992914844992051,
+        "pr_auc": 0.994634815001527
+      },
+      "saved": {
+        "accuracy": 0.957611,
+        "precision": 0.958507,
+        "recall": 0.964779,
+        "f1": 0.961633,
+        "roc_auc": 0.992915,
+        "pr_auc": 0.994635
+      },
+      "absolute_differences": {
+        "accuracy": 3.3603238869250873e-07,
+        "precision": 1.696982978582895e-07,
+        "recall": 4.117647057766405e-07,
+        "f1": 1.076257832854921e-07,
+        "roc_auc": 1.5500794903200443e-07,
+        "pr_auc": 1.8499847309616513e-07
+      },
+      "confusion_matrix_tn_fp_fn_tp": [
+        [
+          10532,
+          568
+        ],
+        [
+          479,
+          13121
+        ]
+      ]
+    },
+    {
+      "model": "CNN",
+      "recomputed": {
+        "accuracy": 0.9566801619433198,
+        "precision": 0.9506545820745217,
+        "recall": 0.971764705882353,
+        "f1": 0.96109373863719,
+        "roc_auc": 0.9933070979067303,
+        "pr_auc": 0.9949713883621355
+      },
+      "saved": {
+        "accuracy": 0.95668,
+        "precision": 0.950655,
+        "recall": 0.971765,
+        "f1": 0.961094,
+        "roc_auc": 0.993307,
+        "pr_auc": 0.994971
+      },
+      "absolute_differences": {
+        "accuracy": 1.6194331986518762e-07,
+        "precision": 4.179254783354125e-07,
+        "recall": 2.941176470150353e-07,
+        "f1": 2.613628099501497e-07,
+        "roc_auc": 9.790673027865182e-08,
+        "pr_auc": 3.8836213545057063e-07
+      },
+      "confusion_matrix_tn_fp_fn_tp": [
+        [
+          10414,
+          686
+        ],
+        [
+          384,
+          13216
+        ]
+      ]
+    },
+    {
+      "model": "LSTM",
+      "recomputed": {
+        "accuracy": 0.958744939271255,
+        "precision": 0.9625707772630341,
+        "recall": 0.9625,
+        "f1": 0.9625353873304165,
+        "roc_auc": 0.9931255763116058,
+        "pr_auc": 0.9948315534812759
+      },
+      "saved": {
+        "accuracy": 0.958745,
+        "precision": 0.962571,
+        "recall": 0.9625,
+        "f1": 0.962535,
+        "roc_auc": 0.993126,
+        "pr_auc": 0.994832
+      },
+      "absolute_differences": {
+        "accuracy": 6.072874492168978e-08,
+        "precision": 2.2273696587138403e-07,
+        "recall": 0.0,
+        "f1": 3.8733041651806133e-07,
+        "roc_auc": 4.236883941466374e-07,
+        "pr_auc": 4.4651872410650384e-07
+      },
+      "confusion_matrix_tn_fp_fn_tp": [
+        [
+          10591,
+          509
+        ],
+        [
+          510,
+          13090
+        ]
+      ]
+    },
+    {
+      "model": "RNN",
+      "recomputed": {
+        "accuracy": 0.9524291497975709,
+        "precision": 0.9581151832460733,
+        "recall": 0.9553676470588235,
+        "f1": 0.9567394425831155,
+        "roc_auc": 0.9911685049019607,
+        "pr_auc": 0.9932312877704413
+      },
+      "saved": {
+        "accuracy": 0.952429,
+        "precision": 0.958115,
+        "recall": 0.955368,
+        "f1": 0.956739,
+        "roc_auc": 0.991169,
+        "pr_auc": 0.993231
+      },
+      "absolute_differences": {
+        "accuracy": 1.4979757090305412e-07,
+        "precision": 1.8324607320430175e-07,
+        "recall": 3.529411765068602e-07,
+        "f1": 4.425831154897253e-07,
+        "roc_auc": 4.950980392326443e-07,
+        "pr_auc": 2.877704413650761e-07
+      },
+      "confusion_matrix_tn_fp_fn_tp": [
+        [
+          10532,
+          568
+        ],
+        [
+          607,
+          12993
+        ]
+      ]
+    },
+    {
+      "model": "ACLR",
+      "recomputed": {
+        "accuracy": 0.9587854251012146,
+        "precision": 0.9554075575503113,
+        "recall": 0.9704411764705883,
+        "f1": 0.962865689063982,
+        "roc_auc": 0.9938178722840488,
+        "pr_auc": 0.9953626429583357
+      },
+      "saved": {
+        "accuracy": 0.958785,
+        "precision": 0.955408,
+        "recall": 0.970441,
+        "f1": 0.962866,
+        "roc_auc": 0.993818,
+        "pr_auc": 0.995363
+      },
+      "absolute_differences": {
+        "accuracy": 4.2510121456285077e-07,
+        "precision": 4.4244968877560353e-07,
+        "recall": 1.764705882534301e-07,
+        "f1": 3.1093601804421667e-07,
+        "roc_auc": 1.2771595114813294e-07,
+        "pr_auc": 3.570416643450258e-07
+      },
+      "confusion_matrix_tn_fp_fn_tp": [
+        [
+          10484,
+          616
+        ],
+        [
+          402,
+          13198
+        ]
+      ]
+    }
+  ],
+  "oof_log_fold_marker_count": 6
+}
